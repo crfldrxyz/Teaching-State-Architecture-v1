@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsa.dev/schema/intervention-decision-0.1.json",
+  "title": "InterventionDecision",
+  "type": "object",
+  "required": ["id","finding_id","level","message","rationale"],
+  "properties": {
+    "id":{"type":"string"}, "finding_id":{"type":"string"},
+    "level":{"enum":["L0","L1","L2","L3","L4"]}, "message":{"type":"string"}, "rationale":{"type":"string"}, "suppressed":{"type":"boolean"}
+  },
+  "additionalProperties": false
+}
