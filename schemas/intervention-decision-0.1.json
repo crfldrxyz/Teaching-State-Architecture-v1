@@ -3,10 +3,15 @@
   "$id": "https://tsa.dev/schema/intervention-decision-0.1.json",
   "title": "InterventionDecision",
   "type": "object",
-  "required": ["id","finding_id","level","message","rationale"],
+  "required": ["id", "finding_id", "level", "message", "rationale", "suppressed", "policy_version"],
   "properties": {
-    "id":{"type":"string"}, "finding_id":{"type":"string"},
-    "level":{"enum":["L0","L1","L2","L3","L4"]}, "message":{"type":"string"}, "rationale":{"type":"string"}, "suppressed":{"type":"boolean"}
+    "id": {"type": "string", "minLength": 1},
+    "finding_id": {"type": "string", "minLength": 1},
+    "level": {"enum": ["L0", "L1", "L2", "L3", "L4"]},
+    "message": {"type": "string", "minLength": 1},
+    "rationale": {"type": "string", "minLength": 1},
+    "suppressed": {"type": "boolean"},
+    "policy_version": {"type": "string", "minLength": 1}
   },
   "additionalProperties": false
 }

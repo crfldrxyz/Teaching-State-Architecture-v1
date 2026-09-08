@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsa.dev/schema/m6-attention-state-0.1.json",
+  "title": "M6 AttentionState",
+  "type": "object",
+  "required": ["availability", "cognitive_load_estimate", "speaking_status", "instructional_phase", "intervention_density", "interruption_cost"],
+  "properties": {
+    "availability": {"enum": ["AVAILABLE", "LIMITED", "BUSY", "UNAVAILABLE", "UNKNOWN"]},
+    "cognitive_load_estimate": {"type": "number", "minimum": 0, "maximum": 1},
+    "speaking_status": {"enum": ["SPEAKING", "LISTENING", "SILENT", "UNKNOWN"]},
+    "instructional_phase": {"enum": ["OPENING", "EXPLANATION", "QUESTIONING", "DISCUSSION", "ASSESSMENT", "ACTIVITY", "TRANSITION", "CLOSING", "UNKNOWN"]},
+    "intervention_density": {"type": "number", "minimum": 0, "maximum": 1},
+    "interruption_cost": {"type": "number", "minimum": 0, "maximum": 1}
+  },
+  "additionalProperties": false
+}
